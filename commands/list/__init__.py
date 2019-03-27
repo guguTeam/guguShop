@@ -7,6 +7,6 @@ import database
 async def item_list(session: CommandSession):
     l = '【商品列表】'
     for i in database.Item.all():
-        l += '\n[{}] {} | ￥{}'.format(i.id, i.name, i.price)
+        l += '\n[{}] {} | 库存: {} | ￥{}'.format(i.id, i.name, i.count if (i.count > 0) else '缺货', i.price)
 
     await session.send(l)
