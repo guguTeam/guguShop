@@ -17,5 +17,5 @@ async def test(request):
 
 
 def start():
-    threading.Thread(target=lambda : app.run(host='0.0.0.0', port=80), name='web').start()
+    threading.Thread(target=lambda: app.run(host='0.0.0.0', port=80), name='web').start()
 
